@@ -91,12 +91,13 @@ export class FetchApiDataService {
       );
   }
 
-  getUser(user: any): Observable<any> {
+  getUser(): Observable<any> {
     // Get Authorization token stored in local storage
     const token = localStorage.getItem('token');
     // Get Username stored in local storage
+    const username = localStorage.getItem('user');
     return this.http
-      .get(apiUrl + 'users/' + user, {
+      .get(apiUrl + `users/${username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         })
@@ -114,6 +115,23 @@ export class FetchApiDataService {
     const username = localStorage.getItem('username');
     return this.http
       .put(apiUrl + 'users/' + username, userData, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        })
+      })
+      .pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
+  }
+
+  getFavoriteMovies(): Observable<any> {
+    // Get Authorization token stored in local storage
+    const token = localStorage.getItem('token');
+    // Get Username stored in local storage
+    const username = localStorage.getItem('user');
+    return this.http
+      .get(apiUrl + `users/${username}/movies`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         })

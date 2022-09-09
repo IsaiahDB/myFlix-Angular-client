@@ -15,6 +15,9 @@ export class DirectorComponent implements OnInit {
       Birthday: string;
     }
   ) {}
-
+    /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {}
 }

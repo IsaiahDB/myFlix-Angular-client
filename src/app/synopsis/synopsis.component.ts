@@ -15,7 +15,10 @@ export class SynopsisComponent implements OnInit {
       Description: string,
     }
   ) { }
-
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {
   }
 

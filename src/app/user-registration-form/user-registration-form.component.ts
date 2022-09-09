@@ -18,11 +18,16 @@ export class UserRegistrationFormComponent implements OnInit {
     public snackBar: MatSnackBar
   ) { }
 
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {
   }
 
   /**
    * sending form inputs for user registration to backend via fetchApiData Service
+   * @function registerUser
    */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {

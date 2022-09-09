@@ -20,11 +20,16 @@ export class UserLoginFormComponent implements OnInit {
     public router: Router
   ) { }
 
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {
   }
 
   /**
    * sending form inputs for user login to backend via fetchApiData Service
+   * @function loginUser
    */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {

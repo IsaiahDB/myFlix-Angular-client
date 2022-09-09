@@ -18,11 +18,16 @@ export class EditProfileComponent implements OnInit {
     public snackBar: MatSnackBar,
     public router: Router
   ) {}
-
+  
+   /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {}
 
   /**
    * allows user to edit their data, such as Username, password, email, and birthday
+   * @function editUser
    */
   editUser(): void {
     console.log(this.userData);

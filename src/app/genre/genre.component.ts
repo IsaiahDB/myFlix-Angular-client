@@ -15,5 +15,9 @@ export class GenreComponent implements OnInit {
     }
   ) {}
 
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {}
 }

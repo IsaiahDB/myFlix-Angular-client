@@ -23,10 +23,18 @@ export class ProfileComponent implements OnInit {
     public snackBar: MatSnackBar
   ) { }
 
+
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {
     this.getUser();
   }
-
+  /**
+   * display the openUserLoginDialog
+   * @function getUser
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) =>{
       this.user = resp;
@@ -34,12 +42,19 @@ export class ProfileComponent implements OnInit {
       return this.user;
     })
   }
-
+  /**
+   * display the openUserLoginDialog
+   * @function openEditProfileDialog
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '380px'
     })
   }
+  /**
+   * display the openUserLoginDialog
+   * @function deleteProfile
+   */
   deleteProfile(): void {
     if (
       confirm(
